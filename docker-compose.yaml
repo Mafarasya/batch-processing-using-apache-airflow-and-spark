@@ -80,6 +80,30 @@ services:
         mkdir -p /sources/logs /sources/dags /sources/plugins
         chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
         exec /entrypoint airflow version
+  spark-master:
+    image: bitnami/spark:3.5.1
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_MASTER_PORT=7077
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./data:/mnt/airflow_data
+      - ./spark/jars:/opt/spark/jars
+    restart: always
+
+  spark-worker:
+    image: bitnami/spark:3.5.1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    volumes:
+      - ./data:/mnt/airflow_data
+      - ./spark/jars:/opt/spark/jars
+    restart: always
 volumes:
   postgres_airflow:
       external: true
