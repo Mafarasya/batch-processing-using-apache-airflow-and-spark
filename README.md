@@ -26,6 +26,12 @@ The goal of this project is to streamline the data flow from the Data Warehouse 
 4. **TiDB**:
     - Acts as the database for storing and retrieving processed data.
 
+## Dataset
+https://www.kaggle.com/datasets/kapturovalexander/pagila-postgresql-sample-database
+
+## Project Architecture
+![Architecture](images/architecture.png)
+
 ## Data Flow Overview:
 - Raw rental data → Spark (ETL) → Parquet file → Pandas → API → TiDB.
 
@@ -57,4 +63,3 @@ The `docker-compose.yaml` file defines the services (Airflow, Spark, PostgreSQL)
 ### References:
 **Ref**: 
 - https://blog.devgenius.io/how-to-install-apache-airflow-apache-spark-in-a-single-docker-container-1fa4f6fba3c7
-- https://github.com/MSinggihP/airflow-docker-spark
