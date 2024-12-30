@@ -53,11 +53,11 @@ The `docker-compose.yaml` file defines the services (Airflow, Spark, PostgreSQL)
 - By combining Apache Airflow for orchestration and Apache Spark for processing, this project allows efficient batch processing of data in a scalable and automated manner. The Dockerized setup makes it easy to deploy the entire system with minimal configuration.
 
 ## Results:
-- **Airflow**
+### Airflow
 ![Airflow](images/airflow-results.png)
-- **Top Country**
+### Top Country
 ![Top Country](images/top_country.png)
-- **Total Film by Country**
+### Total Film by Country
 ![Total Film by Country](images/total_film_by_country.png)
 
 ### References:
