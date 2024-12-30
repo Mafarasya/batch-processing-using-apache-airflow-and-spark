@@ -1,5 +1,4 @@
 # Batch Processing Using Airflow and Spark
-
 The project described above outlines a robust setup for batch processing workflows using Apache Airflow and Apache Spark within a unified Dockerized environment. Here's a concise summary of the key features and implementation details:
 ---
 
